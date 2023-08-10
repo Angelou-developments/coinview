@@ -3,6 +3,7 @@ import { create } from 'zustand';
 
 const showStore = create((set) => ({
     graphData: [],
+    data: null,
 
     fetchData: async (id) => {
         const [graphRes, dataRes] = await Promise.all([
@@ -20,7 +21,7 @@ const showStore = create((set) => ({
             };
         })
 
-        set({graphData});
+        set({graphData, data: dataRes.data });
         console.log(graphRes.data, dataRes);
     }
 }));

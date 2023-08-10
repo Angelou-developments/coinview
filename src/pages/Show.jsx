@@ -54,7 +54,6 @@ export default function Show() {
   const params = useParams()
 
   React.useEffect(() => {
-    console.log(params)
     store.fetchData(params.id)
   }, [])
 
@@ -82,6 +81,31 @@ export default function Show() {
         <Tooltip />
         <Area type="monotone" dataKey="Price" stroke="#8884d8" fill="#8884d8" />
       </AreaChart>
+
+      <div>
+        <h4>Market cap rank</h4>
+        <span>{ store.data.market_cap_rank }</span>
+      </div>
+      <div>
+        <h4>24h high</h4>
+        <span>${ store.data.market_data.high_24h.gbp }</span>
+      </div>
+      <div>
+        <h4>24h low</h4>
+        <span>${ store.data.market_data.low_24h.gbp }</span>
+      </div>
+      <div>
+        <h4>Circulation supply</h4>
+        <span>${ store.data.market_data.circulating_supply }</span>
+      </div>
+      <div>
+        <h4>Current price</h4>
+        <span>${ store.data.market_data.current_price.gbp }</span>
+      </div>
+      <div>
+        <h4>1y change</h4>
+        <span>${ store.data.market_data.price_change_percentage_1y.toFixed(2) }%</span>
+      </div>
     </div>
   )
 } 
