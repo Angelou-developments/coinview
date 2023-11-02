@@ -20,7 +20,7 @@ export default function Header({ back }) {
           </Link>
         )}
         <h1>
-          <Link to="/">Coiner</Link>
+          <Link to="/">Coinview</Link>
         </h1>
       </div>
     </header>
